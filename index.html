@@ -21,7 +21,7 @@
     }
 
     body {
-      background: #f5f6fa;
+      background: #ffffff;
       margin: 0;
     }
 
@@ -32,6 +32,12 @@
     .mobileWrap {
       width: 100vw;
       min-height: 100vh;
+      position: relative;
+    }
+
+    .mobileWraps {
+      width: 100vw;
+      height: 100%;
       position: relative;
     }
 
@@ -47,6 +53,12 @@
     .stepBg {
       display: block;
       width: 91.4667vw;
+    }
+
+    .stepHomeBg {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
@@ -65,13 +77,13 @@
       }
     });
     if (window.navigator.standalone === true) {
+      document.getElementById("__next").innerHTML =
+        '<main><div class="mobileWraps"><div class="stepWraps"><img src="https://files.dadaowl.cn/upload/pingjia/pj3.jpg" class="stepHomeBg"></div></div></main>'
       window.location.href =
         'tbsellerplatform://?session_event=event_protocol&apiName=openPlugin&from=qn.marketing.0.0&biz=%7B%22appkey%22:%2212267378%22,%22page%22:%22%7B%5C%22url%5C%22:%5C%22pages/index/index%5C%22%7D%22,%22query%22:%22%7B%5C%22from%5C%22:%5C%22desktop%5C%22%7D%22%7D'
     } else if (window.navigator.standalone !== undefined) {
       document.getElementById("__next").innerHTML =
         '<main><div class="mobileWrap"><div class="stepWrap"><img src="https://files.dadaowl.cn/upload/pingjia/pj2.jpg" class="stepBg"></div></div></main>'
-    } else {
-      alert('非iOS系统无法添加到主屏幕。');
     }
   </script>
 </body>
