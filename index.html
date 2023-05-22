@@ -66,29 +66,26 @@
 <body>
   <div id="__next"></div>
   <script type="text/javascript">
-    var visibilitychange = ''
     document.addEventListener('visibilitychange', function () {
-      alert(document.visibilityState)
-//       if (document.visibilityState === 'visible') {
-//         // 在这里执行您希望在页面重新可见时运行的代码
-//         if (window.navigator.standalone === true) {
-//           document.getElementById("__next").innerHTML =
-//             '<main><div class="mobileWraps"><div class="stepWraps"><img src="https://files.dadaowl.cn/upload/pingjia/pj3.jpg" class="stepHomeBg"></div></div></main>'
-//           window.location.href =
-//             'tbsellerplatform://?session_event=event_protocol&apiName=openPlugin&from=qn.marketing.0.0&biz=%7B%22appkey%22:%2212267378%22,%22page%22:%22%7B%5C%22url%5C%22:%5C%22pages/index/index%5C%22%7D%22,%22query%22:%22%7B%5C%22from%5C%22:%5C%22desktop%5C%22%7D%22%7D'
-//         }
-//       }
+      if (document.visibilityState === 'visible') {
+        // 在这里执行您希望在页面重新可见时运行的代码
+        if (window.navigator.standalone === true) {
+          document.getElementById("__next").innerHTML =
+            '<main><div class="mobileWraps"><div class="stepWraps"><img src="https://files.dadaowl.cn/upload/pingjia/pj3.jpg" class="stepHomeBg"></div></div></main>'
+          window.location.href =
+            'tbsellerplatform://?session_event=event_protocol&apiName=openPlugin&from=qn.marketing.0.0&biz=%7B%22appkey%22:%2212267378%22,%22page%22:%22%7B%5C%22url%5C%22:%5C%22pages/index/index%5C%22%7D%22,%22query%22:%22%7B%5C%22from%5C%22:%5C%22desktop%5C%22%7D%22%7D'
+        }
+      }
     });
-
-    if (window.navigator.standalone === true && dvisibilitychange !== 'visible') {
+    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && window.navigator
+      .standalone !== undefined) {
+      document.getElementById("__next").innerHTML =
+        '<main><div class="mobileWrap"><div class="stepWrap"><img src="https://files.dadaowl.cn/upload/pingjia/pj2.jpg" class="stepBg"></div></div></main>'
+    } else(window.navigator.standalone === true) {
       document.getElementById("__next").innerHTML =
         '<main><div class="mobileWraps"><div class="stepWraps"><img src="https://files.dadaowl.cn/upload/pingjia/pj3.jpg" class="stepHomeBg"></div></div></main>'
       window.location.href =
         'tbsellerplatform://?session_event=event_protocol&apiName=openPlugin&from=qn.marketing.0.0&biz=%7B%22appkey%22:%2212267378%22,%22page%22:%22%7B%5C%22url%5C%22:%5C%22pages/index/index%5C%22%7D%22,%22query%22:%22%7B%5C%22from%5C%22:%5C%22desktop%5C%22%7D%22%7D'
-    }
-    if (window.navigator.standalone !== undefined) {
-      document.getElementById("__next").innerHTML =
-        '<main><div class="mobileWrap"><div class="stepWrap"><img src="https://files.dadaowl.cn/upload/pingjia/pj2.jpg" class="stepBg"></div></div></main>'
     }
   </script>
 </body>
