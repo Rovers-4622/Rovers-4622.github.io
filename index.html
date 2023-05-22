@@ -68,7 +68,7 @@
   <script type="text/javascript">
     var visibilitychange = ''
     document.addEventListener('visibilitychange', function () {
-      visibilitychange = document.visibilityState
+      alert(document.visibilityState)
       if (document.visibilityState === 'visible') {
         // 在这里执行您希望在页面重新可见时运行的代码
         if (window.navigator.standalone === true) {
@@ -79,7 +79,7 @@
         }
       }
     });
-    alert(visibilitychange)
+
     if (window.navigator.standalone === true && dvisibilitychange !== 'visible') {
       document.getElementById("__next").innerHTML =
         '<main><div class="mobileWraps"><div class="stepWraps"><img src="https://files.dadaowl.cn/upload/pingjia/pj3.jpg" class="stepHomeBg"></div></div></main>'
